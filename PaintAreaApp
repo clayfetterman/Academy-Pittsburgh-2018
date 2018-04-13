@@ -1,0 +1,91 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace GitHub_Garden
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Paint Project
+            //Takes user input of the diameter of a field, 
+            //and calculates how much color of each paint type is needed
+
+            //variables
+            double diameter;
+            double radius;
+            double area;
+            string color;
+            double numRed;
+            double priceRed;
+            double numBlue;
+            double priceBlue;
+            double numGreen;
+            double priceGreen;
+            double numYellow;
+            double priceYellow;
+
+            //get input
+            //calculate area
+            //calculate paint needed
+            //calculate buckets needed
+            //cacluate remaining colors
+
+                //get diameter input
+                Console.Write("Enter circle diameter (feet): ");
+                diameter = Convert.ToInt32(Console.ReadLine());
+                //get color input
+                Console.Write("Enter color of paint desire: ");
+                color = Console.ReadLine();
+
+                //cacluate radius / area
+                radius = diameter / 2;
+                area = Math.PI * radius * radius;
+
+                //calculate buckets needed
+                //Use ceiling to round up
+                //(if you need two and a half buckets, you must buy three buckets)
+                numRed = Math.Ceiling(area / 100);
+                numBlue = Math.Ceiling(area / 120);
+                numGreen = Math.Ceiling(area / 90);
+                numYellow = Math.Ceiling(area / 70);
+
+                //calculate prices
+                priceRed = numRed * 25;
+                priceBlue = numBlue * 28;
+                priceGreen = numGreen * 33;
+                priceYellow = numYellow * 22;
+
+                //output as function of color
+                color = color.ToLower();
+
+                switch (color)
+                {
+                    case "red":
+                        Console.WriteLine("It will take " + numRed + " buckets to paint the " + radius + "' radius circle.");
+                        Console.WriteLine("It will cost " + priceRed + " dollars.");
+
+                        break;
+                    case "blue":
+                        Console.WriteLine("It will take " + numRed + " buckets to paint the " + radius + "' radius circle.");
+                        Console.WriteLine("It will cost " + priceBlue + " dollars.");
+                        break;
+                    case "green":
+                        Console.WriteLine("It will take " + numRed + " buckets to paint the " + radius + "' radius circle.");
+                        Console.WriteLine("It will cost " + priceGreen + " dollars.");
+                        break;
+                    case "yellow":
+                        Console.WriteLine("It will take " + numRed + " buckets to paint the " + radius + "' radius circle.");
+                        Console.WriteLine("It will cost " + priceYellow + " dollars.");
+                        break;
+                    default:
+                        Console.WriteLine("That color is not available. Please choose from red, blue, yellow, and green.");
+                        break;
+                }//switch
+                Console.ReadLine();
+        }
+    }
+}
